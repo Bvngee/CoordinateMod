@@ -1,0 +1,14 @@
+{
+  "key.coordinate.gui": "Open Main Gui",
+ "coordinatemod.CoordinateScreen.button.openCalc": "Open Dimension Calculator",
+  "coordinatemod.CoordinateScreen.button.openSaves": "Open Saves",
+  "coordinatemod.CoordinateScreen.textfield.name": "name",
+  "coordinatemod.CoordinateScreen.button.addItem": "Add Coordinates",
+ "coordinatemod.CoordinateScreen.label.dimension": "Current Dimension: %d",
+ "coordinatemod.CoordinateScreen.text.currentPlayer": "Current Player Coordinates:",
+ "coordinatemod.CoordinateScreen.text.correspondingNether": "Corresponding Nether Coordinates:",
+ "coordinatemod.CoordinateScreen.text.currentNether": "Current Nether Coordinates:",
+ "coordinatemod.CoordinateScreen.text.correspondingOverworld": "Corresponding Overworld Coordinates:",
+ "coordinatemod.CoordinateScreen.text.currentEnd": "Current End Coordinates:",
+ "coordinatemod.CoordinateScreen.text.noCorresponding": "No Corresponding Coordinates"
+}

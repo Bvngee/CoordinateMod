@@ -37,7 +37,7 @@ public class CoordinateMod implements ModInitializer {
                 GLFW.GLFW_KEY_R,
                 "Coordinate Mod"
         ).build();
-        KeyBindingRegistry.INSTANCE.register(keyBinding); //peepee poopoo
+        KeyBindingRegistry.INSTANCE.register(keyBinding); //peepee poopoogfsgsdfsdfsd
 
         //checks if the initialization works
         System.out.println("Hi peeps!");

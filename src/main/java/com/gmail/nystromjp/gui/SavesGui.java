@@ -76,7 +76,7 @@ public class SavesGui extends LightweightGuiDescription {
             panel.zCoords.setText(new LiteralText(s.zCoordinate));
 
             int index = listItemArray.indexOf(s);
-            panel.editItemButton.setOnClick(() -> this.openEditGui(index, panel.name.getText().asString()));
+            panel.editItemButton.setOnClick(() -> this.openEditGui(index, panel.name.getText().toString()));
 
             panel.deleteItemButton.setOnClick(() -> this.deleteItem(new File(coordinatesPath+"\\"+contents[index])));
             System.out.println(coordinatesPath+"\\"+contents[index]);

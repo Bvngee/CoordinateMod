@@ -4,7 +4,7 @@ import com.gmail.nystromjp.CoordinateMod;
 import com.gmail.nystromjp.ListItem;
 import io.github.cottonmc.cotton.gui.client.LightweightGuiDescription;
 import io.github.cottonmc.cotton.gui.widget.*;
-import io.github.cottonmc.cotton.gui.widget.data.Alignment;
+import io.github.cottonmc.cotton.gui.widget.data.HorizontalAlignment;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.text.LiteralText;
 import net.minecraft.text.TranslatableText;
@@ -36,7 +36,7 @@ public class EditItemGui extends LightweightGuiDescription {
         root.setSize(300, 60);
 
         WLabel label = new WLabel(new TranslatableText("Edit Save:"));
-        label.setAlignment(Alignment.CENTER);
+        label.setHorizontalAlignment(HorizontalAlignment.CENTER);
         root.add(label, 0, 0, 300, 10);
 
         name = new WTextField(new LiteralText("New Name"));
@@ -84,7 +84,7 @@ public class EditItemGui extends LightweightGuiDescription {
         root.setSize(300, 60);
 
         WLabel label = new WLabel(new TranslatableText("Add Coordinates:"));
-        label.setAlignment(Alignment.CENTER);
+        label.setHorizontalAlignment(HorizontalAlignment.CENTER);
         root.add(label, 0, 0, 300, 10);
 
         name = new WTextField(new LiteralText("New Name"));
@@ -128,7 +128,7 @@ public class EditItemGui extends LightweightGuiDescription {
         root.setSize(300, 60);
 
         WLabel label = new WLabel(new TranslatableText("Add Coordinates:"));
-        label.setAlignment(Alignment.CENTER);
+        label.setHorizontalAlignment(HorizontalAlignment.CENTER);
         root.add(label, 0, 0, 300, 10);
 
         name = new WTextField(new LiteralText("New Name"));

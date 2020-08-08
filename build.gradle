@@ -18,18 +18,18 @@ repositories {
 }
 
 dependencies {
-	//to change the versions see the gradle.properties file
-	minecraft "com.mojang:minecraft:${project.minecraft_version}"
-	mappings "net.fabricmc:yarn:${project.yarn_mappings}:v2"
-	modImplementation "net.fabricmc:fabric-loader:${project.loader_version}"
+	minecraft "com.mojang:minecraft:1.16.1"
+	mappings "net.fabricmc:yarn:1.16.1+build.21:v2"
+	modImplementation "net.fabricmc:fabric-loader:0.9.0+build.204"
 
-	// Fabric API. This is technically optional, but you probably want it anyway.
-	modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
+	//Fabric api
+	modImplementation "net.fabricmc.fabric-api:fabric-api:0.16.2+build.385-1.16.1"
 
 	// PSA: Some older mods, compiled on Loom 0.2.1, might have outdated Maven POMs.
 	// You may need to force-disable transitiveness on them.
-	modImplementation "io.github.cottonmc:LibGui:1.10.0+1.15.2"
-	include "io.github.cottonmc:LibGui:1.10.0+1.15.2"
+
+	modImplementation "io.github.cottonmc:LibGui:2.3.0+1.16.1"
+	include "io.github.cottonmc:LibGui:2.3.0+1.16.1"
 
 }
 

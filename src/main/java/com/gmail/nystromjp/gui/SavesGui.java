@@ -53,7 +53,6 @@ public class SavesGui extends LightweightGuiDescription {
         WButton openSaves = new WButton(new TranslatableText("coordinatemod.CoordinateScreen.button.openSaves"));
         root.add(openSaves, 0, 0, 160, 20);
         openSaves.setOnClick(this::saves);
-        System.out.println(CoordinateMod.savesIsOpen);
         if(CoordinateMod.savesIsOpen){
             openSaves.setEnabled(false);
             openCalc.setEnabled(true);
@@ -69,24 +68,24 @@ public class SavesGui extends LightweightGuiDescription {
 
         //create the BiConsumer for the list items
         BiConsumer<ListItem, ListTemplate> configurator = (s, panel) -> {
-
             panel.name.setText(new LiteralText(s.name));
             panel.xCoords.setText(new LiteralText(s.xCoordinate));
             panel.yCoords.setText(new LiteralText(s.yCoordinate));
             panel.zCoords.setText(new LiteralText(s.zCoordinate));
 
             int index = listItemArray.indexOf(s);
-            panel.editItemButton.setOnClick(() -> this.openEditGui(index, panel.name.getText().toString()));
-
+            panel.editItemButton.setOnClick(() -> this.openEditGui(index, panel.name.getText().getString()));
+            System.out.println('1');
+            System.out.println(panel.name.getText().getString());
+            System.out.println(panel.name.getText().toString());
+            System.out.println('1');
             panel.deleteItemButton.setOnClick(() -> this.deleteItem(new File(coordinatesPath+"\\"+contents[index])));
-            System.out.println(coordinatesPath+"\\"+contents[index]);
         };
 
         //create and add the list
         WListPanel<ListItem, ListTemplate> list = new WListPanel<>(listItemArray, ListTemplate::new, configurator);
         list.setListItemHeight(20);
         root.add(list, 0, 40, 320, 140);
-
 
         root.validate(this);
 

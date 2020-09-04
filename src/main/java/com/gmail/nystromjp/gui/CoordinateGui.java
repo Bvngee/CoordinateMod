@@ -6,12 +6,10 @@ import io.github.cottonmc.cotton.gui.widget.WButton;
 import io.github.cottonmc.cotton.gui.widget.WLabel;
 import io.github.cottonmc.cotton.gui.widget.WPlainPanel;
 import io.github.cottonmc.cotton.gui.widget.WText;
-import io.github.cottonmc.cotton.gui.widget.data.Alignment;
+import io.github.cottonmc.cotton.gui.widget.data.HorizontalAlignment;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.text.TranslatableText;
-import net.minecraft.world.dimension.Dimension;
-import net.minecraft.world.dimension.OverworldDimension;
-import net.minecraft.world.dimension.TheNetherDimension;
+import net.minecraft.world.World;
 
 public class CoordinateGui extends LightweightGuiDescription {
 
@@ -25,8 +23,6 @@ public class CoordinateGui extends LightweightGuiDescription {
     public WText xNetherCoordinate;
     public WText yNetherCoordinate;
     public WText zNetherCoordinate;
-
-    public static Dimension currentDimension;
 
     public CoordinateGui() {
         //create root panel
@@ -52,12 +48,12 @@ public class CoordinateGui extends LightweightGuiDescription {
         }
 
         WLabel dimension = new WLabel(new TranslatableText("coordinatemod.CoordinateScreen.label.dimension"));
-        dimension.setAlignment(Alignment.CENTER);
+        //dimension.setAlignment(Alignment.CENTER);
+        dimension.setHorizontalAlignment(HorizontalAlignment.CENTER);
         root.add(dimension, 0, 30, 320, 10);
 
-        //check the dimension the player is in and set the boolean isInOverworld to true or false
-        currentDimension = MinecraftClient.getInstance().player.world.dimension;
-        if(currentDimension instanceof OverworldDimension) {
+        //check the dimension the player is in
+        if(MinecraftClient.getInstance().player.world.getRegistryKey() == World.OVERWORLD) {
             dimension.setText(new TranslatableText("coordinatemod.CoordinateScreen.label.dimension", "Overworld"));
             playerCoordinates.setText(new TranslatableText("coordinatemod.CoordinateScreen.text.currentPlayer"));
             netherCoordinates.setText(new TranslatableText("coordinatemod.CoordinateScreen.text.correspondingNether"));
@@ -69,7 +65,7 @@ public class CoordinateGui extends LightweightGuiDescription {
             netherX = String.valueOf((int) MinecraftClient.getInstance().player.getX() / 8);
             netherY = String.valueOf((int) MinecraftClient.getInstance().player.getY() / 8);
             netherZ = String.valueOf((int) MinecraftClient.getInstance().player.getZ() / 8);
-        }else if(currentDimension instanceof TheNetherDimension){
+        }else if(MinecraftClient.getInstance().player.world.getRegistryKey() == World.NETHER){
             dimension.setText(new TranslatableText("coordinatemod.CoordinateScreen.label.dimension", "Nether"));
             playerCoordinates.setText(new TranslatableText("coordinatemod.CoordinateScreen.text.currentNether"));
             netherCoordinates.setText(new TranslatableText("coordinatemod.CoordinateScreen.text.correspondingOverworld"));
@@ -81,8 +77,7 @@ public class CoordinateGui extends LightweightGuiDescription {
             netherX = String.valueOf((int) MinecraftClient.getInstance().player.getX() * 8);
             netherY = String.valueOf((int) MinecraftClient.getInstance().player.getY() * 8);
             netherZ = String.valueOf((int) MinecraftClient.getInstance().player.getZ() * 8);
-        }else{
-            //End Dimension
+        }else if(MinecraftClient.getInstance().player.world.getRegistryKey() == World.END){
             dimension.setText(new TranslatableText("coordinatemod.CoordinateScreen.label.dimension", "The End"));
             playerCoordinates.setText(new TranslatableText("coordinatemod.CoordinateScreen.text.currentEnd"));
             netherCoordinates.setText(new TranslatableText("coordinatemod.CoordinateScreen.text.noCorresponding"));

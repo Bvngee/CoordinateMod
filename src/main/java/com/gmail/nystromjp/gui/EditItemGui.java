@@ -31,6 +31,9 @@ public class EditItemGui extends LightweightGuiDescription {
         index = i;
         listItemArray = SavesGui.listItemArray;
 
+        System.out.println(new File(SavesGui.coordinatesPath + "\\" + oldName + ".txt").getPath());
+        System.out.println(oldName);
+
         WPlainPanel root = new WPlainPanel();
         setRootPanel(root);
         root.setSize(300, 60);
@@ -205,12 +208,12 @@ public class EditItemGui extends LightweightGuiDescription {
             fileWriter.flush();
             fileWriter.close();
         }catch (IOException e){
-            System.out.println("An error occured.");
+            System.out.println("An error occured while writing.");
             e.printStackTrace();
         }
     }
 
-    public void renameFile(String originalFilePath, String newName){
+    public void renameFile(String originalFilePath, String newName) {
         File oldFile = new File(originalFilePath);
         File newFile = new File(SavesGui.coordinatesPath + "\\" + newName + ".txt");
         oldFile.renameTo(newFile);

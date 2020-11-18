@@ -24,7 +24,7 @@ import java.util.function.BiConsumer;
 public class SavesGui extends LightweightGuiDescription {
 
     public static List<ListItem> listItemArray = new ArrayList<ListItem>();
-    public static String minecraftPath = FabricLoader.getInstance().getGameDirectory().getPath();
+    public static String minecraftPath = FabricLoader.getInstance().getGameDir().toString();
     public static String coordinatesPath = minecraftPath + "\\coordinates";
 
     public SavesGui() {

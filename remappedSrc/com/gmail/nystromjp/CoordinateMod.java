@@ -9,7 +9,6 @@ import net.fabricmc.loader.api.FabricLoader;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.options.KeyBinding;
 import org.lwjgl.glfw.GLFW;
-
 import java.io.File;
 
 public class CoordinateMod implements ModInitializer {

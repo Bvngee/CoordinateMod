@@ -3,6 +3,7 @@ package com.gmail.nystromjp.gui;
 import com.gmail.nystromjp.CoordinateMod;
 import com.gmail.nystromjp.ListItem;
 import io.github.cottonmc.cotton.gui.client.LightweightGuiDescription;
+import io.github.cottonmc.cotton.gui.widget.*;
 import io.github.cottonmc.cotton.gui.widget.data.HorizontalAlignment;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.text.LiteralText;

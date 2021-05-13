@@ -63,7 +63,7 @@ public class CoordinateGui extends LightweightGuiDescription {
             z = String.valueOf((int) MinecraftClient.getInstance().player.getZ());
             //set nether coordinates
             netherX = String.valueOf((int) MinecraftClient.getInstance().player.getX() / 8);
-            netherY = String.valueOf((int) MinecraftClient.getInstance().player.getY() / 8);
+            netherY = String.valueOf((int) MinecraftClient.getInstance().player.getY());
             netherZ = String.valueOf((int) MinecraftClient.getInstance().player.getZ() / 8);
         }else if(MinecraftClient.getInstance().player.world.getRegistryKey() == World.NETHER){
             dimension.setText(new TranslatableText("coordinatemod.CoordinateScreen.label.dimension", "Nether"));
@@ -75,7 +75,7 @@ public class CoordinateGui extends LightweightGuiDescription {
             z = String.valueOf((int) MinecraftClient.getInstance().player.getZ());
             //set nether coordinates
             netherX = String.valueOf((int) MinecraftClient.getInstance().player.getX() * 8);
-            netherY = String.valueOf((int) MinecraftClient.getInstance().player.getY() * 8);
+            netherY = String.valueOf((int) MinecraftClient.getInstance().player.getY());
             netherZ = String.valueOf((int) MinecraftClient.getInstance().player.getZ() * 8);
         }else if(MinecraftClient.getInstance().player.world.getRegistryKey() == World.END){
             dimension.setText(new TranslatableText("coordinatemod.CoordinateScreen.label.dimension", "The End"));

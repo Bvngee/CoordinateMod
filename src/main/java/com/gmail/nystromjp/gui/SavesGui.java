@@ -3,6 +3,7 @@ package com.gmail.nystromjp.gui;
 import com.gmail.nystromjp.CoordinateMod;
 import com.gmail.nystromjp.ListItem;
 import io.github.cottonmc.cotton.gui.client.LightweightGuiDescription;
+import io.github.cottonmc.cotton.gui.widget.data.Insets;
 import io.github.cottonmc.cotton.gui.widget.WButton;
 import io.github.cottonmc.cotton.gui.widget.WListPanel;
 import io.github.cottonmc.cotton.gui.widget.WPlainPanel;
@@ -42,6 +43,7 @@ public class SavesGui extends LightweightGuiDescription {
 
         //create root panel
         WPlainPanel root = new WPlainPanel();
+		root.setInsets(Insets.ROOT_PANEL);
         setRootPanel(root);
         root.setSize(320, 180);
 

@@ -5,6 +5,7 @@ import com.gmail.nystromjp.ListItem;
 import io.github.cottonmc.cotton.gui.client.LightweightGuiDescription;
 import io.github.cottonmc.cotton.gui.widget.*;
 import io.github.cottonmc.cotton.gui.widget.data.HorizontalAlignment;
+import io.github.cottonmc.cotton.gui.widget.data.Insets;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.text.LiteralText;
 import net.minecraft.text.TranslatableText;
@@ -35,6 +36,7 @@ public class EditItemGui extends LightweightGuiDescription {
         System.out.println(oldName);
 
         WPlainPanel root = new WPlainPanel();
+		root.setInsets(Insets.ROOT_PANEL);
         setRootPanel(root);
         root.setSize(300, 60);
 
@@ -83,6 +85,7 @@ public class EditItemGui extends LightweightGuiDescription {
         listItemArray = SavesGui.listItemArray;
 
         WPlainPanel root = new WPlainPanel();
+		root.setInsets(Insets.ROOT_PANEL);
         setRootPanel(root);
         root.setSize(300, 60);
 
@@ -127,6 +130,7 @@ public class EditItemGui extends LightweightGuiDescription {
         listItemArray = SavesGui.listItemArray;
 
         WPlainPanel root = new WPlainPanel();
+		root.setInsets(Insets.ROOT_PANEL);
         setRootPanel(root);
         root.setSize(300, 60);
 
